@@ -6,7 +6,7 @@ Simple and clean reportsystem with UI's for everyone!
 
 > Equipped and Integrated with [CortexPE/DiscordWebhookAPI](https://github.com/CortexPE/DiscordWebhookAPI)
 
-> Direct Ban is now Supported, **compatible with or without [cucumber](https://github.com/Lycol50/cucumber) plugin!**
+> Direct Ban is not working on API4**
 
 ## Todo List
 
@@ -16,11 +16,12 @@ Simple and clean reportsystem with UI's for everyone!
     - [x] /reportadmin
 - [x] Admin
     - [x] Admin ui
-    - [x] Direct ban
+    - [] Direct ban
     - [x] Send report to all op's and permitted players
 - [x] Missing Features
     - [x] Modular system
-    - [x] "back" and "exit" buttons
+    - [x] "back" button
+    - [] "exit" button
     - [ ] Multilang
     - [x] Review notification
         - [x] For new reports
