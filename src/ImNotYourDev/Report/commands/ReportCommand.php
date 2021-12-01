@@ -5,7 +5,7 @@ namespace ImNotYourDev\Report\commands;
 use ImNotYourDev\Report\forms\PlayerReportForm;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 class ReportCommand extends Command
 {
@@ -30,7 +30,7 @@ class ReportCommand extends Command
     public function execute(CommandSender $sender, string $commandLabel, array $args)
     {
         if($sender instanceof Player){
-            $sender->sendForm(new PlayerReportForm());
+            $sender->sendForm(new PlayerReportForm()); // idk if forms is implemented.
 
         }
         return false;

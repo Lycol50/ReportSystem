@@ -2,7 +2,6 @@
 
 namespace ImNotYourDev\Report;
 
-use ImNotYourDev\PGToDiscord\PGTD;
 use ImNotYourDev\Report\commands\AdminCommand;
 use ImNotYourDev\Report\commands\ReportCommand;
 use ImNotYourDev\Report\commands\ReportListCommand;
@@ -22,10 +21,8 @@ class Report extends PluginBase
     public $prefix;
     public $mode = "local";
     public $unreviewed = false;
-    public $discord;
 
-    public function onEnable()
-    {
+    protected function onEnable() : void {
         self::$instance = $this;
         $this->saveResource("config.yml");
         $this->mode = $this->getPluginConfig()->get("mode");
@@ -43,9 +40,9 @@ class Report extends PluginBase
         $this->getServer()->getCommandMap()->register("reportadmin", new AdminCommand("reportadmin"));
         $this->getServer()->getCommandMap()->register("reportlist", new ReportListCommand("reportlist"));
 
-
-        $this->getLogger()->info("§7System mode: §e" . $this->mode);
-        $this->getLogger()->info($this->prefix . "ReportSystem by ImNotYourDev enabled!");
+        // New implementation of getLogger() -> getServer()->getLogger
+        $this->getServer()->getLogger()->info("§7System mode: §e" . $this->mode);
+        $this->getServer()->getLogger()->info($this->prefix . "ReportSystem by ImNotYourDev enabled!");
     }
 
     /**
@@ -154,8 +151,7 @@ class Report extends PluginBase
     /**
      * NOTE: maybe not the best thing but wokring!
      */
-    public function sendReportToMod()
-    {
+    public function sendReportToMod() {
         if($this->mode == "local"){
             foreach ($this->getServer()->getOnlinePlayers() as $player){
                 if($player->hasPermission("reportssystem.admin")){

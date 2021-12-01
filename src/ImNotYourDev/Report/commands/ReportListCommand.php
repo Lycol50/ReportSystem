@@ -5,7 +5,7 @@ namespace ImNotYourDev\Report\commands;
 use ImNotYourDev\Report\forms\ReportListForm;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 class ReportListCommand extends Command
 {
@@ -14,7 +14,7 @@ class ReportListCommand extends Command
         $description = "show you an list of all reports";
         $usageMessage = "/reportlist";
         $aliases = ["reportlst"];
-        $this->setPermission("reportsystem.list");
+        // $this->setPermission("reportsystem.list");
         parent::__construct($name, $description, $usageMessage, $aliases);
     }
 
@@ -22,7 +22,7 @@ class ReportListCommand extends Command
     {
         if($sender->hasPermission("reportsystem.admin")){
             if($sender instanceof Player){
-                $sender->sendForm(new ReportListForm());
+                $sender->sendForm(new ReportListForm()); // idk if forms is implemented.
             }
         }
         return false;

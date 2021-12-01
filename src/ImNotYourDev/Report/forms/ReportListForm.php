@@ -5,7 +5,7 @@ namespace ImNotYourDev\Report\forms;
 use ImNotYourDev\Report\libs\dktapps\pmforms\MenuForm;
 use ImNotYourDev\Report\libs\dktapps\pmforms\MenuOption;
 use ImNotYourDev\Report\Report;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 class ReportListForm extends MenuForm
 {
@@ -24,9 +24,9 @@ class ReportListForm extends MenuForm
         $this->options[] = new MenuOption("§aBack");
         parent::__construct($title, $text, $this->options, function (Player $player, $data) : void {
             if($data == count($this->options) - 1){
-                $player->sendForm(new AdminForm());
+                $player->sendForm(new AdminForm()); // idk if forms is implemented.
             }else{
-                $player->sendForm(new ReviewReportForm(Report::getInstance()->getReportList()[array_keys(Report::getInstance()->getReportList())[$data]]));
+                $player->sendForm(new ReviewReportForm(Report::getInstance()->getReportList()[array_keys(Report::getInstance()->getReportList())[$data]])); // idk if forms is implemented.
             }
             return;
         });

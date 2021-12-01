@@ -2,6 +2,8 @@
 Simple and clean reportsystem with UI's for everyone!
 <br>This plugin use [dktapps](https://github.com/dktapps) great [pmforms](https://github.com/dktapps-pm-pl/pmforms) API library. (although old but functional at least)
 
+> **This repository is for PMMP API4**
+
 > Equipped and Integrated with [CortexPE/DiscordWebhookAPI](https://github.com/CortexPE/DiscordWebhookAPI)
 
 > Direct Ban is now Supported, **compatible with or without [cucumber](https://github.com/Lycol50/cucumber) plugin!**

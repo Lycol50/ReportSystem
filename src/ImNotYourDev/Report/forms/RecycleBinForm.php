@@ -5,7 +5,7 @@ namespace ImNotYourDev\Report\forms;
 use ImNotYourDev\Report\libs\dktapps\pmforms\MenuForm;
 use ImNotYourDev\Report\libs\dktapps\pmforms\MenuOption;
 use ImNotYourDev\Report\Report;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 class RecycleBinForm extends MenuForm
 {
@@ -25,14 +25,14 @@ class RecycleBinForm extends MenuForm
                     Report::getInstance()->deleteForEver($item["nestdir"]);
                 }
                 $player->sendMessage(Report::getInstance()->prefix . "§4All Reports deleted!");
-                $player->sendForm(new $this);
+                $player->sendForm(new $this); // idk if forms is implemented.
             }elseif($data == count($this->options) - 1){
-                $player->sendForm(new AdminForm());
+                $player->sendForm(new AdminForm()); // idk if forms is implemented.
             }else{
                 $item = Report::getInstance()->getRecycleBinList()[array_keys(Report::getInstance()->getRecycleBinList())[$data - 1]]; //-1 dont calculate with delete all button
                 Report::getInstance()->deleteForEver($item["nestdir"]);
                 $player->sendMessage(Report::getInstance()->prefix . "§aReport deleted!");
-                $player->sendForm(new $this);
+                $player->sendForm(new $this); // idk if forms is implemented.
             }
             return;
         });

@@ -9,7 +9,7 @@ use ImNotYourDev\Report\libs\dktapps\pmforms\element\Dropdown;
 use ImNotYourDev\Report\libs\dktapps\pmforms\element\Label;
 use ImNotYourDev\Report\libs\dktapps\pmforms\element\Toggle;
 use ImNotYourDev\Report\Report;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 class PlayerReportForm extends CustomForm
 {
@@ -45,8 +45,9 @@ class PlayerReportForm extends CustomForm
                 $player->sendMessage(Report::getInstance()->prefix . "§eYour report was sent!");
                 Report::getInstance()->sendReportToMod();
             }else{
-                $player->removeAllWindows();
+                //$player->removeAllWindows(); // Might not be compatible to API4 as of now..
                 $player->sendMessage(Report::getInstance()->prefix . "§cReport was not send and got deleted!");
+                return;
             }
             return;
         });

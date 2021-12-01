@@ -1,7 +1,7 @@
 name: Report
 main: ImNotYourDev\Report\Report
-api: 3.0.0
-version: 1.5
+api: 4.0.0
+version: 2
 author: ImNotYourDev, Lycol50
 
 permissions:
