@@ -2,11 +2,12 @@
 build-by-default: true
 branches:
 - master
+- API4
 projects:
   ReportSystem:
     path: ""
     libs:
       - src: CortexPE/DiscordWebhookAPI/DiscordWebhookAPI
-        version: ^1.0.1
-        branch: master
+        version: ^1.0.2
+        branch: PM4
 ...
