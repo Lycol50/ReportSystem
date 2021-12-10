@@ -2,7 +2,7 @@
 
 namespace ImNotYourDev\Report;
 
-use ImNotYourDev\Report\commands\AdminCommand;
+use ImNotYourDev\Report\commands\ReportAdminCommand;
 use ImNotYourDev\Report\commands\ReportCommand;
 use ImNotYourDev\Report\commands\ReportListCommand;
 use ImNotYourDev\Report\listener\EventListener;
@@ -37,7 +37,7 @@ class Report extends PluginBase
         }
         $this->getServer()->getPluginManager()->registerEvents(new EventListener(), $this);
         $this->getServer()->getCommandMap()->register("report", new ReportCommand("report"));
-        $this->getServer()->getCommandMap()->register("report admin", new AdminCommand("report admin"));
+        $this->getServer()->getCommandMap()->register("report admin", new ReportAdminCommand("report admin"));
         $this->getServer()->getCommandMap()->register("report list", new ReportListCommand("report list"));
 
         // New implementation of getLogger() -> getServer()->getLogger
