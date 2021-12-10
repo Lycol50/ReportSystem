@@ -34,20 +34,18 @@ class ReportCommand extends Command
     public function execute(CommandSender $sender, string $commandLabel, array $args)
     {
         if ($sender instanceof Player) {
-            switch ($args[0]) {
-                case "admin":
-                    if ($sender->hasPermission("report.admin")) {
-                        $sender->sendForm(new AdminForm()); // idk if forms is implemented.
-                    }
-                    break;
-                case "list":
-                    if ($sender->hasPermission("report.admin") || $sender->hasPermission("report.list")) {
-                        $sender->sendForm(new ReportListForm());
-                    }
-                    break;
-                default:
-                    $sender->sendForm(new PlayerReportForm()); // idk if forms is implemented.
-                break;
+            if (empty($args[0])) {
+                $sender->sendForm(new PlayerReportForm()); // idk if forms is implemented.
+            } elseif ($args[0] === "admin") {
+                if ($sender->hasPermission("report.admin")) {
+                    $sender->sendForm(new AdminForm()); // idk if forms is implemented.
+                }
+            } elseif ($args[0] === "list") {
+                if ($sender->hasPermission("report.admin") || $sender->hasPermission("report.list")) {
+                    $sender->sendForm(new ReportListForm());
+                }
+            } else {
+                return false;
             }
         }
         return false;
