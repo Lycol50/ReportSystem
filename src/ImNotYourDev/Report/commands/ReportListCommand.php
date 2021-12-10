@@ -11,16 +11,13 @@ class ReportListCommand extends Command
 {
     public function __construct(string $name)
     {
-        $description = "show you an list of all reports";
-        $usageMessage = "/reportlist";
-        $aliases = ["reportlst"];
         $this->setPermission("reportsystem.list");
-        parent::__construct($name, $description, $usageMessage, $aliases);
+        parent::__construct($name);
     }
 
     public function execute(CommandSender $sender, string $commandLabel, array $args)
     {
-        if($sender->hasPermission("reportsystem.admin")){
+        if($sender->hasPermission("reportsystem.admin") || $sender->hasPermission("reportsystem.list")){
             if($sender instanceof Player){
                 $sender->sendForm(new ReportListForm());
             }
