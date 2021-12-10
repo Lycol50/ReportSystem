@@ -7,8 +7,12 @@ commands:
   report:
     description: Send a report
     usage: /report
+    permission: report
 
 permissions:
+  report:
+    default: true
+    description: permission to use /report
   report.admin:
     description: open admin UI and Report list
     default: op
