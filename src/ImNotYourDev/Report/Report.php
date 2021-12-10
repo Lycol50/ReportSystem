@@ -2,7 +2,6 @@
 
 namespace ImNotYourDev\Report;
 
-use ImNotYourDev\PGToDiscord\PGTD;
 use ImNotYourDev\Report\commands\AdminCommand;
 use ImNotYourDev\Report\commands\ReportCommand;
 use ImNotYourDev\Report\commands\ReportListCommand;
@@ -40,12 +39,8 @@ class Report extends PluginBase
         }
         $this->getServer()->getPluginManager()->registerEvents(new EventListener(), $this);
         $this->getServer()->getCommandMap()->register("report", new ReportCommand("report"));
-        $this->getServer()->getCommandMap()->register("reportadmin", new AdminCommand("reportadmin"));
-        $this->getServer()->getCommandMap()->register("reportlist", new ReportListCommand("reportlist"));
-
-
-        $this->getLogger()->info("§7System mode: §e" . $this->mode);
-        $this->getLogger()->info($this->prefix . "ReportSystem by ImNotYourDev enabled!");
+        $this->getServer()->getCommandMap()->register("report admin", new AdminCommand("report admin"));
+        $this->getServer()->getCommandMap()->register("report list", new ReportListCommand("report list"));
     }
 
     /**
