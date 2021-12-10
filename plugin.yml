@@ -20,4 +20,3 @@ permissions:
     default: op
   reportsystem.list:
     description: show you an list of all reports
-    default: true
