@@ -32,9 +32,7 @@ class ReportCommand extends Command
     public function execute(CommandSender $sender, string $commandLabel, array $args)
     {
         if ($sender instanceof Player) {
-            if(empty($args)) {
                 $sender->sendForm(new PlayerReportForm()); // idk if forms is implemented.
-            }
             switch ($args) {
                 case "admin":
                     if ($sender->hasPermission("report.admin")) {
