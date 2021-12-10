@@ -12,12 +12,13 @@ class AdminCommand extends Command
 {
     public function __construct(string $name)
     {
+        $this->setPermission("report.admin");
         parent::__construct($name);
     }
 
     public function execute(CommandSender $sender, string $commandLabel, array $args)
     {
-        if($sender->hasPermission("reportsystem.admin")){
+        if($sender->hasPermission("report.admin")){
             if($sender instanceof Player){
                 $sender->sendForm(new AdminForm()); // idk if forms is implemented.
             }
