@@ -5,8 +5,8 @@ namespace ImNotYourDev\Report\forms;
 use ImNotYourDev\Report\Report;
 use pocketmine\player\Player;
 
-use ImNotYourDev\Report\libs\dktapps\pmforms\MenuOption;
-use ImNotYourDev\Report\libs\dktapps\pmforms\MenuForm;
+use dktapps\pmforms\MenuOption;
+use dktapps\pmforms\MenuForm;
 
 class AdminForm extends MenuForm
 {
