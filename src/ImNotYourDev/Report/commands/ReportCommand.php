@@ -15,6 +15,7 @@ class ReportCommand extends Command
      */
     public function __construct(string $name)
     {
+        $this->setPermission("report");
         parent::__construct($name);
     }
 
