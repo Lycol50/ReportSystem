@@ -18,8 +18,10 @@ class ReportCommand extends Command
      */
     public function __construct(string $name)
     {
-        $desc = "Send a report";
-        parent::__construct($name, $desc);
+        $description = "Send a report";
+        $usageMessage = "/report";
+        $this->setPermission("report.admin");
+        parent::__construct($name, $description, $usageMessage);
 
     }
 
