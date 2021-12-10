@@ -15,8 +15,9 @@ commands:
     usage: /report list
 
 permissions:
-  reportsystem.admin:
+  report.admin:
     description: open admin UI and Report list
     default: op
-  reportsystem.list:
+  report.list:
     description: show you an list of all reports
+    default: op
