@@ -11,11 +11,8 @@ class AdminCommand extends Command
 {
     public function __construct(string $name)
     {
-        $description = "admin command for reportsystem";
-        $usageMessage = "/reportadmin";
-        $aliases = ["reportadm"];
         $this->setPermission("reportsystem.admin");
-        parent::__construct($name, $description, $usageMessage, $aliases);
+        parent::__construct($name);
     }
 
     public function execute(CommandSender $sender, string $commandLabel, array $args)
