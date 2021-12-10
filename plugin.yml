@@ -3,8 +3,21 @@ main: ImNotYourDev\Report\Report
 api: 3.0.0
 version: 1.5
 author: ImNotYourDev, Lycol50
+commands:
+  report:
+    description: Send a report
+    usage: /report
+  report admin:
+    description: Open Report Admin UI
+    usage: /report admin
+  report list:
+    description: Open Report List
+    usage: /report list
 
 permissions:
   reportsystem.admin:
-    description: open admin ui and report list
+    description: open admin UI and Report list
     default: op
+  reportsystem.list:
+    description: show you an list of all reports
+    default: true
