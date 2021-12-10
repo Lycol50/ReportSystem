@@ -3,14 +3,11 @@ main: ImNotYourDev\Report\Report
 api: 4.0.0
 version: 2.0.0-beta
 author: ImNotYourDev, Lycol50
-commands:
-  report:
-    permission: report
 
 permissions:
   report:
     default: true
-    description: permission to use /report
+    description: Permission to access /report
   report.admin:
     description: open admin UI and Report list
     default: op
